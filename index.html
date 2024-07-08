@@ -10,35 +10,49 @@
     <form action="">
       <h3>Sign up at Hulk Gym</h3>
 
+      <p id="fullNamAlert"></p>
       <label for="fullName">Full Name</label>
-      <input type="text" id="fullName" required />
+      <input type="text" id="fullName" required oninput="checkName()" />
 
       <label for="email">E-mail</label>
-      <input type="text" id="email" required />
+      <input type="email" id="email" required />
 
+      <p id="addressAlert"></p>
       <label for="address">Address</label>
-      <input type="text" id="address" required />
+      <input type="text" id="address" required oninput="addressCheck()" />
 
       <label for="height">Height in cm</label>
-      <input type="number" id="height" required />
+      <input type="number" id="height" required min="50" max="250" />
 
       <label for="weight">Weight in kg</label>
-      <input type="number" id="weight" required />
+      <input type="number" id="weight" required min="10" max="300" />
 
       <label for="birthday">Birthday</label>
-      <input type="date" id="birthday" required />
+      <input
+        type="date"
+        id="birthday"
+        required
+        min="1970-01-01"
+        max="2016-01-01"
+      />
 
       <label for="telephone"> Telephone Number</label>
-      <input type="tel" id="telephone" required />
+      <input type="tel" id="telephone" required pattern="01[0125][0-9]{8}" />
 
       <label for="emergencyPhone">Emergency Contact Phone</label>
-      <input type="tel" id="emergencyPhone" required />
+      <input
+        type="tel"
+        id="emergencyPhone"
+        required
+        pattern="01[0125][0-9]{8}"
+      />
 
       <label for="healthConditions">Health Conditions</label>
       <textarea id="healthConditions" required></textarea>
 
       <input type="submit" value="Sign up" />
     </form>
+
     <script src="./main.js"></script>
   </body>
 </html>
